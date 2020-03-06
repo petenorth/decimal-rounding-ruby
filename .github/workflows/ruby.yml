@@ -17,6 +17,6 @@ jobs:
     - run: sudo apt-get update
     - run: sudo apt-get install libsqlite3-dev libxml2-dev libxslt-dev
     - run: bundle install 
-    - run: docker run -d --name my_postgres -p 5432:5432 postgres:11
+    - run: docker run -d --name my_postgres -p 5432:5432 postgres
     - run: docker exec -it my_postgres psql -U postgres -c "create database my_database"
     - run: 'DATABASE_URL=postgres://postgres@localhost:5432/ bundle exec ruby test.rb'
