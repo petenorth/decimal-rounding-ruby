@@ -18,4 +18,4 @@ jobs:
     - run: sudo apt-get install libsqlite3-dev libxml2-dev libxslt-dev
     - run: bundle install 
     - run: docker run -e POSTGRES_PASSWORD=secret -d -p 5432:5432 postgres
-    - run: 'DATABASE_URL=postgresql://postgres:secret@localhost:5432/postgres bundle exec ruby test.rb'
+    - run: 'DATABASE_URL=postgres://postgres:secret@localhost:5432/postgres bundle exec ruby test.rb'
