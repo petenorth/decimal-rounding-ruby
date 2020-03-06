@@ -1,6 +1,6 @@
 #require 'bundler/setup'
-#require 'active_record'
-require 'bigdecimal'
+require 'active_record'
+
 #class Thing < ActiveRecord::Base
 #end
 
