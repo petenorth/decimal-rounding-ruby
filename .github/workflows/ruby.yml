@@ -17,4 +17,4 @@ jobs:
     - run: sudo apt-get update
     - run: sudo apt-get install libsqlite3-dev libxml2-dev libxslt-dev
     - run: bundle install 
-    - run: bundle exec ruby test.rb
+    - run: 'DATABASE_URL=sqlite3::memory: bundle exec ruby test.rb'
