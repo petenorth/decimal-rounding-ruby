@@ -19,5 +19,4 @@ jobs:
     - run: bundle install 
     - run: docker run -d -e POSTGRES_PASSWORD=password --name my_postgres -p 5432:5432 postgres
     - run: sleep 20
-    - run:  docker exec -it my_postgres psql -U postgres -c "create database my_database"
     - run: 'DATABASE_URL=postgres://postgres:password@localhost:5432/postgres bundle exec ruby test.rb'
