@@ -12,17 +12,12 @@ ActiveRecord::Base.connection.execute <<-SQL
   )
 SQL
 
-thing = Thing.new(fee: 1.250473853637869)
-expected = BigDecimal.new('1.25')
+thing = Thing.new(fee: 444.44)
+expected = BigDecimal.new('444.44')
 actual = thing.fee
 delta = actual - expected
-epsilon = BigDecimal.new('0.0001')
 
-if delta.abs > epsilon
-  puts 'Expected    %s' % expected.inspect
-  puts 'But got     %s' % actual.inspect
-  puts 'Difference  %s' % delta.inspect
-  exit 1
-else
-  puts 'OK'
-end
+puts 'Expected    %s' % expected.inspect
+puts 'But got     %s' % actual.inspect
+puts 'Difference  %s' % delta.inspect
+
